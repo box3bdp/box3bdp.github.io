@@ -1,0 +1,6 @@
+Disallow: /
+Disallow: /notes
+Disallow: /novel
+Disallow: /members
+Disallow: /rules
+Disallow: /plan
