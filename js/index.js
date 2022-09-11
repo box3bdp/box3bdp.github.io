@@ -10,7 +10,7 @@ btn.onclick = function () {
         main.style.display = "";
     }
     else {
-        err.innerHTML = `密码错误！<br/><a href="#" id="q">密码正确但无法登录？</a>`;
+        err.innerHTML = `密码错误！<br/><a href="#" id="q" help>密码正确但无法登录？</a>`;
         var q = document.getElementById("q");
         q.onclick = function () {
             if(Notification.permission=="granted")
@@ -20,7 +20,8 @@ btn.onclick = function () {
                     body:"因为党内有党员被开除党籍，按照相关规定，管理员需要更改密码。\n请时刻关注民主党各群的密码更新动态！",
                     icon:"https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
                 }
-                var help=new Notification(title,options);
+                var notification =new Notification(title,options);
+                notification();
             }
             // alert("密码正确但无法登录的解决方法：\n")
         }
