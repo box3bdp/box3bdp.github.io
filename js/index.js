@@ -13,15 +13,13 @@ btn.onclick = function () {
         err.innerHTML = `密码错误！<br/><a href="#" id="q" help>密码正确但无法登录？</a>`;
         var q = document.getElementById("q");
         q.onclick = function () {
-            if(Notification.permission=="granted")
-            {
-                var title="密码正确但无法登录的解决方法";
-                var options={
-                    body:"因为党内有党员被开除党籍，按照相关规定，管理员需要更改密码。\n请时刻关注民主党各群的密码更新动态！",
-                    icon:"https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
+            if (Notification.permission == "granted") {
+                var title = "密码正确但无法登录的解决方法";
+                var options = {
+                    body: "因为党内有党员被开除党籍，按照相关规定，管理员需要更改密码。\n请时刻关注民主党各群的密码更新动态！",
+                    icon: "https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
                 }
-                var notification =new Notification(title,options);
-                notification();
+                var notification = new Notification(title, options);
             }
             // alert("密码正确但无法登录的解决方法：\n")
         }
