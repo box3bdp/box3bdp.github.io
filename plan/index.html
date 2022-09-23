@@ -13,153 +13,207 @@
     <link rel="stylesheet" href="https://box3bdp.github.io/css/index.css">
 </head>
 
-<body>
-    <header style="margin: 0px; background-color: rgb(140, 228, 240); height: 75px;position: fixed; width: 100%;">
-        <table style="border-spacing: 15px;">
-            <tr>
-                <td>
-                    <a href="https://box3bdp.github.io">
-                        <img src="https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
-                            style="width: 50px; height: 40px;">
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: greenyellow;">
-                    <a href="https://box3bdp.github.io">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            首页&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(47, 255, 213);">
-                    <a href="https://box3bdp.github.io/notes/">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            情报&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(255, 231, 47);">
-                    <a href="https://box3bdp.github.io/novel/">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            党刊&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(218, 159, 112);">
-                    <a href="https://box3bdp.github.io/members/">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            党员录&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: greenyellow;">
-                    <a href="https://box3bdp.github.io/rules/">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            党规&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-
-                <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(47, 255, 213);">
-                    <a href="https://box3bdp.github.io/plan/">
-                        <p style="vertical-align:middle;font-size: 15px;">
-                            主旨与任务&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </td>
-            </tr>
-        </table>
-    </header>
-    <div style="background-color: rgb(241, 241, 241);font-size: 50px;height: 300px;">
-        <br /><br />
-        &nbsp;&nbsp;
-        <img src="https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
-            style="width: 50px; height: 40px;">Box3 Democratic Party<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码岛民主党 - 主旨和任务
-        <br /><br />
-    </div>
-
-    <div class="c" style="font-size: 30px;" id="sign">
+<body style="background-image: linear-gradient(to bottom right, #00ff91, #0015ff);">
+    <div style="font-size: 30px; text-align: center; height: 100%; height: 1000px;" id="sign">
         <br /><br />
         请输入密码
         <br />
         <input type="password" maxlength="6" id="pw">
-        <button id="btn">提交</button>
-        <br/>
-        <div style="color: red; font-size: 20px;" id="error"></div>
+        <input type="button" id="btn" value="确定"
+            style="width: 70px;height: 35px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
+        <div style="color: red; font-size: 20px;" id="error" onclick="del()"></div>
         <br /><br />
     </div>
+    <div id="delete"
+        style="border: 1px solid;width: 100%;margin: auto;height: 100%;position: fixed;left: 0px;top: 0px;background: rgb(0,0,0,0.6);overflow: auto;text-align: center;display: none;">
+        <div style="background: white;width: 250px;height: 160px;margin: auto;margin-top: 50px;border-radius: 5px;">
+            <div style="height: 120px;border-bottom: 1px solid #CCCCCC;">
+                <!-- 框内内容 -->
+                <div style="font-size: 0.9rem;padding-top: 30px;"><strong>密码正确但无法登录的解决方法</strong></div>
+                <div style="font-size: 0.8rem;margin-top: 15px;">
+                    因为成员变更，按照相关规定，管理员需要更改密码。
+                    <br />
+                    请时刻关注密码更新动态！
+                </div>
+            </div>
+            <div style="height: 39px;">
+                <div onclick="delesc()"
+                    style="float: left;width:100%;height: 39px;border-right: 1px solid #CCCCCC;line-height: 39px;font-size: 1rem;">
+                    确认</div>
+                <!-- <div onclick="delesc()" style="float: right;width: 50%;height: 39px;line-height: 39px;font-size: 1rem">
+                    取消</div> -->
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="main">
+        <header
+            style="margin: 0px; background-image: linear-gradient(to bottom right,#ffd900,#ff6a00); height: 75px;position: fixed; width: 100%;">
+            <table style="border-spacing: 15px;">
+                <tr>
+                    <td>
+                        <a href="https://box3bdp.github.io">
+                            <img src="https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png"
+                                style="width: 50px; height: 40px;">
+                        </a>
+                    </td>
 
-    <div style="font-size: 20px;display: none;" id="main">
-        <h3>
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: greenyellow;">
+                        <a href="https://box3bdp.github.io">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                首页&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(47, 255, 213);">
+                        <a href="https://box3bdp.github.io/notes/">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                情报&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(255, 231, 47);">
+                        <a href="https://box3bdp.github.io/novel/">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                党刊&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(218, 159, 112);">
+                        <a href="https://box3bdp.github.io/members/">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                党员录&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(0, 255, 17);">
+                        <a href="https://box3bdp.github.io/rules/">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                党规&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+
+                    <td style="padding-left: 20px; padding-right: 10px;background-color: rgb(47, 255, 213);">
+                        <a href="https://box3bdp.github.io/plan/">
+                            <p style="vertical-align:middle;font-size: 15px;">
+                                主旨与任务&nbsp;&nbsp;
+                            </p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <div
+            style="background-color: rgb(241, 241, 241);font-size: 50px; height: 300px;background-image: linear-gradient(to bottom right, #ffffff, #b2b2b2);">
+            <br /><br />
+            &nbsp;&nbsp;
+            <img src="https://box3bdp.github.io/png/代码岛民主党党徽.png" style="width: 50px; height: 40px;">
+            <font color="#ffcd00">B</font>
+            <font color="#ffc300">o</font>
+            <font color="#ffb900">x</font>
+            <font color="#ffaf00">3</font>
+            <font color="#ff9c00">D</font>
+            <font color="#ff9200">e</font>
+            <font color="#ff8800">m</font>
+            <font color="#ff7e00">o</font>
+            <font color="#ff7500">c</font>
+            <font color="#ff6b00">r</font>
+            <font color="#ff6100">a</font>
+            <font color="#ff5700">t</font>
+            <font color="#ff4e00">i</font>
+            <font color="#ff4400">c</font>
+            <font color="#ff3000">P</font>
+            <font color="#ff2700">a</font>
+            <font color="#ff1d00">r</font>
+            <font color="#ff1300">t</font>
+            <font color="#ff0900">y</font>
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <font color="#ffcd00">代</font>
+            <font color="#ffbe00">码</font>
+            <font color="#ffaf00">岛</font>
+            <font color="#ffa100">民</font>
+            <font color="#ff9200">主</font>
+            <font color="#ff8300">党</font>
+            <font color="#ff6600">-</font>
+            <font color="#ff4900">主</font>
+            <font color="#ff3a00">旨</font>
+            <font color="#ff2b00">和</font>
+            <font color="#ff1d00">任</font>
+            <font color="#ff0e00">务</font>
+            <br /><br />
+        </div>
+
+        <div style="font-size: 20px;" ondragstart="return false;">
+            <h3>
             &nbsp;&nbsp;
             一、消灭贝奇思想
-        </h3>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        贝奇的左倾思想，是盲目支持官方而忘却了实际，不顾眼前实际和条件，急于求成。
-        这种思想，严重危害了代码岛。使得代码岛成了贝奇右倾思想的舞台。
-        <h3>
-            &nbsp;&nbsp;
-            二、反对图形化
-        </h3>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        代码很好学，而图形化只是给小孩子启蒙编程用的。
-        如果代码岛出了图形化，代码岛将会陷入人才危机。
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        一个图形化大佬在代码大佬面前吹自己会代码，这是一个很好笑又很严肃的问题。
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你不是代码师，也不要无视这个问题。万一出了图形化，影响到的将是代码岛的所有的行业。
-        <h3>
-            &nbsp;&nbsp;
-            三、反对游戏化
-        </h3>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        身为未成年人的我们，自控力不强，容易沉迷游戏无法自拔。所以我们要合理规划时间，劳逸结合。
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        我们在管好自己的同时，也要劝阻其他人不要沉迷游戏。
-        <h3>
-            &nbsp;&nbsp;
-            四、反对小团体
-        </h3>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        小团体，是占代码岛岛民很大一部分的。这些小团体要么整天泡在游戏里，要么就是在聊天区互喷。
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        小团体严重危害了代码岛的和平发展。我们只能避免其产生，然后遏制已有的小团体的发展。
-        <br/>
-    </div>
-    <div class="c">
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />到底啦~<br /><br />
-        <hr />
-    </div>
-    <div id="footer" style="height: 200px;">
-        <div>&nbsp;&nbsp;友情链接：
+            </h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            贝奇的左倾思想，是盲目支持官方而忘却了实际，不顾眼前实际和条件，急于求成。
+            这种思想，严重危害了代码岛。使得代码岛成了贝奇右倾思想的舞台。
+            <h3>
+                &nbsp;&nbsp;
+                二、反对图形化
+            </h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            代码很好学，而图形化只是给小孩子启蒙编程用的。
+            如果代码岛出了图形化，代码岛将会陷入人才危机。
             <br />
-            <a href="https://box3.codemao.cn" target="_blank">
-                &nbsp;&nbsp;神奇代码岛
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://shequ.codemao.cn" target="_blank">
-                编程猫社区
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.bilibili.com" target="_blank">
-                B站
-            </a>
-        </div>
-        <div>&nbsp;&nbsp;QQ群：
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            一个图形化大佬在代码大佬面前吹自己会代码，这是一个很好笑又很严肃的问题。
             <br />
-            &nbsp;&nbsp;835188260
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你不是代码师，也不要无视这个问题。万一出了图形化，影响到的将是代码岛的所有的行业。
+            <h3>
+                &nbsp;&nbsp;
+                三、反对游戏化
+            </h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            身为未成年人的我们，自控力不强，容易沉迷游戏无法自拔。所以我们要合理规划时间，劳逸结合。
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            我们在管好自己的同时，也要劝阻其他人不要沉迷游戏。
+            <h3>
+                &nbsp;&nbsp;
+                四、反对小团体
+            </h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            小团体，是占代码岛岛民很大一部分的。这些小团体要么整天泡在游戏里，要么就是在聊天区互喷。
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            小团体严重危害了代码岛的和平发展。我们只能避免其产生，然后遏制已有的小团体的发展。
+            <br />
         </div>
-        <div class="c">CopyRight©BDP Stdio Company</div>
+        <div class="c">
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />到底啦~<br /><br />
+            <hr />
+        </div>
+        <div id="footer" style="height: 200px;">
+            <div>&nbsp;&nbsp;友情链接：
+                <br />
+                <a href="https://box3.codemao.cn" target="_blank">
+                    &nbsp;&nbsp;神奇代码岛
+                </a>
+                &nbsp;&nbsp;
+                <a href="https://shequ.codemao.cn" target="_blank">
+                    编程猫社区
+                </a>
+                &nbsp;&nbsp;
+                <a href="https://www.bilibili.com" target="_blank">
+                    B站
+                </a>
+            </div>
+            <div>&nbsp;&nbsp;QQ群：
+                <br />
+                &nbsp;&nbsp;835188260
+            </div>
+            <div class="c">CopyRight©BDP Stdio Company</div>
+        </div>
     </div>
 </body>
-
 
 <script src="https://box3bdp.github.io/js/index.js"></script>
