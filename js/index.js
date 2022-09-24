@@ -15,10 +15,8 @@ btn.onclick = function () {
         if (window.Notification) {
             if (Notification.permission == "granted") {
                 nowdate();
-            } else if (Notification.permission != "denied") {
-                Notification.requestPermission(function (permission) {
-                    nowdate();
-                });
+            } else {
+                alert('请开启网站的通知权限');
             }
         } else {
             alert('浏览器不支持Notification，请使用主流新版浏览器');
