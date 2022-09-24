@@ -4,6 +4,7 @@ var sign = document.getElementById("sign");
 var main = document.getElementById("main");
 var err = document.getElementById("error");
 var date = "V2.0.2";
+var is_check_date = false;
 
 pw.focus();
 
@@ -34,7 +35,7 @@ btn.onclick = function () {
 
 var update = function () {
     //获取用户授权状态
-    if (Notification.permission == "granted") {
+    if (Notification.permission == "granted"&&is_check_date == true) {
         var update = new Notification("更新预告", {
             //正文
             body: '1.修改党规  2.更新第二期党刊',
@@ -49,12 +50,13 @@ var update = function () {
         update.onclose = function () {
             update.close();
         };
+        is_check_date = false;
     }
 };
 
 var nowdate = function () {
     //获取用户授权状态
-    if (Notification.permission == "granted") {
+    if (Notification.permission == "granted"&&is_check_date == false) {
         var nowdate = new Notification(date + "版本(现在版本)更新内容", {
             //正文
             body: '1.网站使用炫酷的渐变效果  2.登录界面优化  3.修复网站主站的Javascript报错',
@@ -66,6 +68,7 @@ var nowdate = function () {
             nowdate.close();
             update();
         };
+        is_check_date = true;
     }
 };
 
