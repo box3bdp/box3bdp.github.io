@@ -10,9 +10,49 @@ var rightpw = [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] +
 
 pw.focus();
 
+var update = function () {
+    //获取用户授权状态
+    if (Notification.permission == "granted" && is_check_date == true) {
+        var update = new Notification("更新预告", {
+            //正文
+            body: '1.修改党规  2.更新第二期党刊',
+            //图标
+            icon: 'https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png'
+        });
+        //消息被点击
+        update.onclick = function () {
+            update.close();
+        };
+        //消息被关闭
+        update.onclose = function () {
+            update.close();
+        };
+        is_check_date = false;
+    }
+};
+
+var nowdate = function () {
+    //获取用户授权状态
+    if (Notification.permission == "granted" && is_check_date == false) {
+        var nowdate = new Notification(date + "版本(现在版本)更新内容", {
+            //正文
+            body: '1.网站使用炫酷的渐变效果  2.登录界面优化  3.修复网站主站的Javascript报错',
+            //图标
+            icon: 'https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png'
+        });
+        //消息被点击或关闭
+        nowdate.onclick = nowdate.onclose = function () {
+            nowdate.close();
+            update();
+        };
+        is_check_date = true;
+    }
+};
+
 if (localStorage.getItem("isin") == "yes") {
     if (localStorage.getItem("lastpw") != rightpw) {
         alert('安全提示','因密码变更，需要重新手动登录');
+        return;
     }
     sign.style.display = "none";
     main.style.display = "inline";
@@ -52,45 +92,6 @@ btn.onclick = function () {
         // }
     }
 }
-
-var update = function () {
-    //获取用户授权状态
-    if (Notification.permission == "granted" && is_check_date == true) {
-        var update = new Notification("更新预告", {
-            //正文
-            body: '1.修改党规  2.更新第二期党刊',
-            //图标
-            icon: 'https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png'
-        });
-        //消息被点击
-        update.onclick = function () {
-            update.close();
-        };
-        //消息被关闭
-        update.onclose = function () {
-            update.close();
-        };
-        is_check_date = false;
-    }
-};
-
-var nowdate = function () {
-    //获取用户授权状态
-    if (Notification.permission == "granted" && is_check_date == false) {
-        var nowdate = new Notification(date + "版本(现在版本)更新内容", {
-            //正文
-            body: '1.网站使用炫酷的渐变效果  2.登录界面优化  3.修复网站主站的Javascript报错',
-            //图标
-            icon: 'https://box3bdp.github.io/png/%E4%BB%A3%E7%A0%81%E5%B2%9B%E6%B0%91%E4%B8%BB%E5%85%9A%E5%85%9A%E5%BE%BD.png'
-        });
-        //消息被点击或关闭
-        nowdate.onclick = nowdate.onclose = function () {
-            nowdate.close();
-            update();
-        };
-        is_check_date = true;
-    }
-};
 
 pw.onclick = function () {
     err.innerHTML = "";
