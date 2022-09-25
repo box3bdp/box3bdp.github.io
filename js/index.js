@@ -52,18 +52,19 @@ var nowdate = function () {
 if (localStorage.getItem("isin") == "yes") {
     if (localStorage.getItem("lastpw") != rightpw) {
         alert('安全提示','因密码变更，需要重新手动登录');
-        return;
     }
-    sign.style.display = "none";
-    main.style.display = "inline";
-    if (window.Notification) {
-        if (Notification.permission == "granted") {
-            nowdate();
+    else{
+        sign.style.display = "none";
+        main.style.display = "inline";
+        if (window.Notification) {
+            if (Notification.permission == "granted") {
+                nowdate();
+            } else {
+                alert('请开启网站的通知权限');
+            }
         } else {
-            alert('请开启网站的通知权限');
+            alert('浏览器不支持Notification，请使用主流新版浏览器');
         }
-    } else {
-        alert('浏览器不支持Notification，请使用主流新版浏览器');
     }
 }
 
