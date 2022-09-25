@@ -168,15 +168,26 @@
                 <font color="#fac202">继</font>
                 <font color="#fbb901">续</font>
                 &nbsp;&nbsp;
-                <input type="button" id="play" value="播放"
-                    style="width: 40px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
-                <input type="button" id="pause" value="暂停"
-                    style="width: 40px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
+                <input type="button" id="play-1" value="播放音频"
+                    style="width: 80px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
+                <input type="button" id="pause-1" value="暂停音频"
+                    style="width: 80px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
+                <input type="button" id="play-2" value="显示视频"
+                    style="width: 80px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
+                <input type="button" id="pause-2" value="关闭视频"
+                    style="width: 80px;height: 20px;border: 0px;border-radius: 5px;background-color: #ffcc00;color: rgb(227, 254, 255);">
             </p>
             <br />
             &nbsp;&nbsp;
-            <audio src="https://box3bdp.github.io/music/战斗仍将继续.mp3" autoplay controls loop id="music"
-                style="display: none;"></audio>
+            <audio src="https://box3bdp.github.io/music/战斗仍将继续.mp3" autoplay loop id="music"
+                style="display: none;">
+            </audio>
+            <br /><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <iframe src="https://player.bilibili.com/player.html?aid=7089279&bvid=BV13s411W77z&cid=11559789&page=1"
+                scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                style="height: 500px; width:600px; display: none;" id="video">
+            </iframe>
             <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <font color="#f5ff09">党</font>
@@ -417,16 +428,29 @@
 
 <script src="https://box3bdp.github.io/js/index.js"></script>
 <script>
-    var play = document.getElementById("play");
-    var pause = document.getElementById("pause");
+    var play_1 = document.getElementById("play-1");
+    var pause_1 = document.getElementById("pause-1");
+    var play_2= document.getElementById("play-2");
+    var pause_2 = document.getElementById("pause-2");
     var music = document.getElementById("music");
-    play.onclick = function () {
+    var video = document.getElementById("video");
+    play_1.onclick = function () {
         music.play();
         music.style.display = "inline";
     }
-    pause.onclick = function () {
+    pause_1.onclick = function () {
         music.pause();
         music.style.display = "none";
     }
+    play_2.onclick = function () {
+        // video.play();
+        video.style.display = "inline";
+    }
+    pause_2.onclick = function () {
+        // video.pause();
+        video.style.display = "none";
+    }
+    
 </script>
+
 <!-- <script src="E:\桌面\BDP\官网\js\index.js"></script> -->
