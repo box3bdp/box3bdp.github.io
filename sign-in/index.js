@@ -1,23 +1,44 @@
 window.onload = function () {
-    var oUser = document.getElementsByName("username");
-    var oPwd = document.getElementsByName("password");
-    var oBtn = document.getElementsByClassName("btn");
-    var oText = document.getElementById("text");
+    var oUser = document.getElementById("name");
+    var oPwd = document.getElementById("pw");
+    var oBtn = document.getElementById("btn");
+    var oText = document.getElementById("error");
 
-    var Members=['build_一只建筑师吖'];
+    var rightpw = ([][(!![] + [])[!+[] + !+[] + !+[]] + ([][[]] + [])[+!+[]] + (!![] + [])[+[]] + (!![] + [])[+!+[]] + ([![]] + [][[]])[+!+[] + [+[]]] + (!![] + [])[!+[] + !+[] + !+[]] + (![] + [])[!+[] + !+[] + !+[]]]() + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (+(!+[] + !+[] + [+[]]))[(!![] + [])[+[]] + (!![] + [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]])[+!+[] + [+[]]] + ([] + [])[([][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]] + [])[!+[] + !+[] + !+[]] + (!![] + [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]])[+!+[] + [+[]]] + ([][[]] + [])[+!+[]] + (![] + [])[!+[] + !+[] + !+[]] + (!![] + [])[+[]] + (!![] + [])[+!+[]] + ([][[]] + [])[+[]] + ([][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]] + [])[!+[] + !+[] + !+[]] + (!![] + [])[+[]] + (!![] + [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]])[+!+[] + [+[]]] + (!![] + [])[+!+[]]][([][[]] + [])[+!+[]] + (![] + [])[+!+[]] + ((+[])[([][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]] + [])[!+[] + !+[] + !+[]] + (!![] + [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]])[+!+[] + [+[]]] + ([][[]] + [])[+!+[]] + (![] + [])[!+[] + !+[] + !+[]] + (!![] + [])[+[]] + (!![] + [])[+!+[]] + ([][[]] + [])[+[]] + ([][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]] + [])[!+[] + !+[] + !+[]] + (!![] + [])[+[]] + (!![] + [][(![] + [])[+[]] + (![] + [])[!+[] + !+[]] + (![] + [])[+!+[]] + (!![] + [])[+[]]])[+!+[] + [+[]]] + (!![] + [])[+!+[]]] + [])[+!+[] + [+!+[]]] + (!![] + [])[!+[] + !+[] + !+[]]]](!+[] + !+[] + [+!+[]]) + (+[![]] + [+(+!+[] + (!+[] + [])[!+[] + !+[] + !+[]] + [+!+[]] + [+[]] + [+[]] + [+[]])])[+!+[] + [+[]]] + (![] + [])[!+[] + !+[] + !+[]] + ([][(!![] + [])[!+[] + !+[] + !+[]] + ([][[]] + [])[+!+[]] + (!![] + [])[+[]] + (!![] + [])[+!+[]] + ([![]] + [][[]])[+!+[] + [+[]]] + (!![] + [])[!+[] + !+[] + !+[]] + (![] + [])[!+[] + !+[] + !+[]]]() + [])[!+[] + !+[]];
+
+    var members = [
+        "build_%u4E00%u53EA%u5EFA%u7B51%u5E08%u5416",
+        "%u4F60%u597D2050",
+        "%u4E0D%u6587%u660Eder%u5C9B%u6C11"
+    ];
 
     oBtn.onclick = function () {
-        if(Members.includes[oUser.value]&&oPwd.value=="代码岛民主党万岁")
-        {
-            localStorage.setItem("user", oUser.value);
-            alert('s');
+        console.log();
+        if (members.includes(escape(oUser.value))) {
+            if (oPwd.value == rightpw) {
+                localStorage.setItem("user", oUser.value);
+                localStorage.setItem("pwd", oPwd.value);
+                localStorage.setItem("lspwd", oPwd.value);
+                localStorage.setItem("isin", "yes");
+                window.location = localStorage.getItem("yourpage");
+            }
+            else {
+                if (localStorage.getItem("isin") == "yes" && oPwd.value != rightpw && oPwd.value == localStorage.getItem("lspwd")) {
+                    oText.innerHTML = "密码正确但无法登录的解决方法<br/ >因为成员变更，按照相关规定，管理员需要更改密码。<br/ >请时刻关注密码更新动态！";
+                    return;
+                }
+                else {
+                    oText.innerHTML = "密码错误！";
+                }
+            }
         }
-        // if (oUser.value != "" && oPwd.value != ""&&oUser.value==localStorage.getItem("user")&&oPwd.value==localStorage.getItem("pwd")) {
-        //     localStorage.setItem("user", oUser.value);
-        //     localStorage.setItem("pwd", oPwd.value);
-        // }
         else {
-            oText.innerHTML = "用户名或密码错误！";
+            oText.innerHTML = "用户名错误！";
         }
     }
+
+    var code = '不文明der岛民';
+    var en = escape(code);
+    var de = unescape(en);
+    console.log(en, '    ', de)
 }
