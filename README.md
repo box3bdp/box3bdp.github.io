@@ -4,4 +4,4 @@
 欢迎来到代码岛民主党！
 屑build站长写代码都累到脱发了）））
 
-copyright @BDP Stdio Company
+CopyRight©Box3 Democratic Party
